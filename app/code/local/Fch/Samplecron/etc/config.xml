@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fch_Samplecron>
+            <version>1.0.0</version>
+        </Fch_Samplecron>
+    </modules>
+    <global>
+        <models>
+            <samplecron>
+                <class>Fch_Samplecron_Model</class>
+            </samplecron>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <fch_samplecron>
+                <schedule><cron_expr>*/30 * * * *</cron_expr></schedule>
+                <run><model>samplecron/observer::doSomething</model></run>
+            </fch_samplecron>
+        </jobs>
+    </crontab>
+</config>
